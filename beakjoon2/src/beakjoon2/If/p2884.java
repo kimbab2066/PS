@@ -31,5 +31,4 @@ public class p2884 {
 			H = 23;
 		return H + " " + M;
 	}
-}
-// end of class
+}// end of class
