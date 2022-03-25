@@ -5,17 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 1330번
-public class p1330 {
+public class P2525 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		int A = Integer.parseInt(st.nextToken());
-		int B = Integer.parseInt(st.nextToken());
+		int H = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		int T = Integer.parseInt(br.readLine());
+		H += T / 60;
+		M += T % 60;
 
-		if (A > B) System.out.println(">");
-		else if (A < B) System.out.println("<");
-		else System.out.println("==");
+		if (M > 59) {
+			M -= 60;
+			H++;
+		}
+		if (H > 23)
+			H -= 24;
+		System.out.println(H + " " + M);
 
 	}// end of main
 }// end of class
