@@ -10,7 +10,7 @@ public class P10818 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
+		
 		int max = -1000001;
 		int min = 1000001;
 		while (st.hasMoreTokens()) {
