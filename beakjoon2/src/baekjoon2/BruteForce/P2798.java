@@ -1,4 +1,4 @@
-package baekjoon2.Undefined;
+package baekjoon2.BruteForce;
 
 import java.util.Scanner;
 
