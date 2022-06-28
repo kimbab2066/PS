@@ -25,7 +25,7 @@ public class P1358 {
 		// radius
 		int R = H / 2, YR = Y + R;
 		int cnt = 0;
-		while (P-- > 0) {
+		while (P-- > 0) { 
 			st = new StringTokenizer(br.readLine());
 			int px = Integer.valueOf(st.nextToken());
 			int py = Integer.valueOf(st.nextToken());
@@ -36,6 +36,6 @@ public class P1358 {
 			}
 		} // end of while
 		System.out.println(cnt);
-
+		
 	}// end of main
 }// end of class
