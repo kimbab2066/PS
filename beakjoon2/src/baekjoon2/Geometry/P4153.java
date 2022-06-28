@@ -26,7 +26,7 @@ public class P4153 {
 				z = tmp;
 			}
 
-			// escape
+			// escape`
 			if (x == 0 && y == 0 && z == 0) break;
 			
 			if (Math.pow(x, 2) + Math.pow(y, 2) == Math.pow(z, 2)) {
