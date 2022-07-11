@@ -32,11 +32,26 @@ static int LCD(int a, int b{
 구현하면 **지나친 중복이 발생하는 경우**에 이 **재귀적 중복을 해결하는 방법**을 뜻한다.
 
 **최장 공통 부분 순서(LCS)**
+**최장 공통 부분 순서 길이(재귀호출)**
 ```java
 LCS(m,n){
-	if(m = 0 or n = 0) then return 0;
-	else if(xₘ = yₙ) then return LCS(m-1, n-1) + 1;
-	else return max(LCS(m-1, n), LCS(m, n-1));
+  if(m = 0 or n = 0) then return 0;
+  else if(xₘ = yₙ) then return LCS(m-1, n-1) + 1;
+  else return max(LCS(m-1, n), LCS(m, n-1));
 }
 
+```
+**최장 공통 부분 순서 길이(동적 프로그래밍)**
+```java
+LCS(m,n){
+  for i <- 0 to m
+    C[i,0] <- 0;
+  for j <- 0 to n
+    C[0,j] <- 0;
+  for i <- 1 to m //1번 loop
+    for j <- 1 to n
+      if (xᵢ = yᵣ) then C[i,j] <- C[i-1,j-1]+1;//yᵣ = y의 j를 의미
+      else C[i,j] <- max{C[i-1,j], C[i,j-1]};
+  return C[m,n];
+}
 ```
