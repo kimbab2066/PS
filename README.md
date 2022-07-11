@@ -17,11 +17,11 @@ static int GCD(int a, int b) {
 static int GCD2(int a, int b){
   while(b!=0){
     int d = a % b;
-      a = b;
-      b = d;
-    }
-    return a;
+    a = b;
+    b = d;
   }
+  return a;
+}
 static int LCD(int a, int b{
   return a * b / GCD(a, a % b);
 }
