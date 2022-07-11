@@ -31,8 +31,8 @@ static int LCD(int a, int b{
 
 구현하면 **지나친 중복이 발생하는 경우**에 이 **재귀적 중복을 해결하는 방법**을 뜻한다.
 
+**최장 공통 부분 순서(LCS)**
 ```java
-최장 공통 부분 순서(LCS)
 LCS(m,n){
 	if(m = 0 or n = 0) then return 0;
 	else if(xₘ = yₙ) then return LCS(m-1, n-1) + 1;
