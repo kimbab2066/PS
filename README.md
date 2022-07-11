@@ -26,3 +26,4 @@ static int LCD(int a, int b{
   return a * b / GCD(a, a % b);
 }
 ```
+## 동적 프로그래밍(Dynamic Programming)
