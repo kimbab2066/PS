@@ -15,7 +15,7 @@ static int GCD(int a, int b) {
     return GCD(b, a % b);
 }
 static int GCD2(int a, int b){
-  while(b!=0){
+  while(b != 0){
     int d = a % b;
     a = b;
     b = d;
