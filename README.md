@@ -10,9 +10,19 @@
 유클리드 호제법으로 재귀함수를 만들어 최대공약수와 최소공배수를 구한다.
 
 ```java
-def gcd(num1,num2):
-    if num2==0:return num1
-    return gcd(num2,num1%num2)
-print(gcd(5,10))
-print(5*10//gcd(5,10))
+	static int GCD(int a, int b) {
+		if (b == 0) return a;
+		return GCD(b, a % b);
+	}
+  static int GCD2(int a, int b){
+    while(b!=0){
+      int d = a % b;
+      a = b;
+      b = d;
+    }
+    return a;
+  }
+  static int LCD(int a, int b{
+    return a * b / GCD(a, a % b);
+  }
 ```
