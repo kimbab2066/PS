@@ -66,7 +66,6 @@ public class P2580 {
 			}
 		}
 		// square check
-
 		int s_row = x / 3 * 3;
 		int s_col = y / 3 * 3;
 
