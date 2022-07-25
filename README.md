@@ -22,7 +22,7 @@ static int GCD2(int a, int b){
   }
   return a;
 }
-static int LCD(int a, int b{
+static int LCM(int a, int b{
   return a * b / GCD(a, a % b);
 }
 ```
