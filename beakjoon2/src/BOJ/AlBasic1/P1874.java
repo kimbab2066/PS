@@ -20,6 +20,7 @@ public class P1874 {
 					sb.append("+\n");
 				}
 				start = val;
+				// TOP의 원소가 입력된 val과 같지 않은 경우
 			} else if (stack.peek() != val) {
 				System.out.println("NO");
 				return;
