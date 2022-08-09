@@ -20,8 +20,8 @@ public class P1935 {
 		Double result = 0.0;
 		for (int i = 0; i < expression.length(); i++) {
 			char ch = expression.charAt(i);
-			if ('A' <= ch && ch <= 'Z') {
-				stack.push(arr[ch - 'A']);
+			if (65 <= ch && ch <= 90) {
+				stack.push(arr[ch - 65]);
 			} else {
 				Double num1 = stack.pop();
 				Double num2 = stack.pop();
