@@ -8,7 +8,6 @@ public class P11655 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String S = br.readLine();
 		StringBuilder sb = new StringBuilder();
-
 		for (int i = 0; i < S.length(); i++) {
 			char ch = S.charAt(i);
 			if (65 <= ch && ch <= 90) {

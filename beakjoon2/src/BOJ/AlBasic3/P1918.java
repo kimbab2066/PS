@@ -7,48 +7,53 @@ public class P1918 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String expression = br.readLine();// 표기식
-		StringBuilder sb = new StringBuilder();
 		Stack<Character> stack = new Stack<>();
-		for (int i = 0; i < expression.length(); i++) {
-			char ch = expression.charAt(i);
-			if (65 <= ch && ch <= 90) {// 문자인 경우 (A to Z)
-				sb.append(ch);
-			} else {
+		StringBuilder sb = new StringBuilder();
 
-				switch (ch) {
-				case '+':
-				case '-':
-				case '*':
-				case '/':
-					while (!stack.empty() && priority(stack.peek()) >= priority(ch)) {
-						sb.append(stack.pop());
-					}
-					stack.push(ch);
-					break;
-				case '(':
-					stack.push(ch);
-				case ')':
-					while (!stack.empty()) {
-						if (stack.peek() == ch) {
-							stack.pop();
-							break;
-						}
-					}
-				}
+		for (int i = 0; i < expression.length(); i++) {
+			char oper = expression.charAt(i);
+			if (65 <= oper && oper <= 90) {
+				sb.append(oper);
 			}
+			switch (oper) {
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+				while (!stack.empty() && priority(stack.peek()) >= priority(oper)) {
+					sb.append(stack.pop());
+				}
+				stack.push(oper);
+				break;
+			case '(':
+				stack.push(oper);
+				break;
+			case ')':
+				while (!stack.empty()) {
+					if (stack.peek() == '(') {
+						stack.pop();
+						break;
+					}
+					sb.append(stack.pop());
+				}
+			}// end of switch
 		} // end of for
 		while (!stack.empty()) {
 			sb.append(stack.pop());
 		}
 		System.out.println(sb);
-	}
 
-	public static int priority(char ch) {
-		if (ch == '(') {
+	}// end of main
+
+	static int priority(char oper) {
+		if (oper == '(' || oper == ')') {
 			return 0;
-		} else if (ch == '+' || ch == '-') {
+		} else if (oper == '+' || oper == '-') {
 			return 1;
-		} else
+		} else if (oper == '*' || oper == '/') {
 			return 2;
+		} else {
+			return -1;
+		}
 	}
 }// end of class
