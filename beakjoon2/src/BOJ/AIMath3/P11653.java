@@ -9,7 +9,7 @@ public class P11653 {
 		long N = Integer.valueOf(br.readLine());
 		StringBuilder sb = new StringBuilder();
 
-		for (int i = 2; i * i < N; i++) {// i*i == sqrt(N)
+		for (int i = 2; i * i <= N; i++) {// i*i == sqrt(N)
 			while (N % i == 0) {
 				sb.append(i + "\n");
 				N /= i;
