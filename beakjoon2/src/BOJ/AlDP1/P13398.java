@@ -24,19 +24,21 @@ public class P13398 {
 		 */
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.valueOf(br.readLine());
-		int val[] = new int[N], DP[][] = new int[N][2];
+		int val[] = new int[N];
+		int DP[][] = new int[N][2];
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		// value in val
 		for (int i = 0; i < N; i++) {
 			val[i] = Integer.valueOf(st.nextToken());
 		}
 		int result = DP[0][0] = DP[0][1] = val[0];
-
+		// Bottom-Up
 		for (int i = 1; i < N; i++) {
 			DP[i][0] = Math.max(DP[i - 1][0] + val[i], val[i]);// 제거 x
 			DP[i][1] = Math.max(DP[i - 1][0], DP[i - 1][1] + val[i]);// 제거
 			result = Math.max(result, Math.max(DP[i][0], DP[i][1]));
 		}
 		System.out.println(result);
+
 	}// end of main
 }// end of class
