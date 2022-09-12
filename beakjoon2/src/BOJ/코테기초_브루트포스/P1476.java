@@ -44,17 +44,26 @@ public class P1476 {
 		int m = 0;
 		int y = 0;
 
+		int year = 0;
+		while (true) {
+			year++;
+			if ((year - E) % 15 == 0 && (year - S) % 28 == 0 && (year - M) % 19 == 0) break;
+		}
+		System.out.println(year);
 		while (true) {
 			y++;
 			e++;
 			s++;
 			m++;
-			if (e > 15) e = 1;
-			if (s > 28) s = 1;
-			if (m > 19) m = 1;
-			if(E == e && S == s && M == m) break;
+			if (e > 15)
+				e = 1;
+			if (s > 28)
+				s = 1;
+			if (m > 19)
+				m = 1;
+			if (E == e && S == s && M == m)
+				break;
 		}
 		System.out.println(y);
-
 	}// end of main
 }// end of class
