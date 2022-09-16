@@ -1,9 +1,9 @@
-package Programmers.Hash;
+package Programmers.Hash.Level1;
 
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class P02 {
+public class 폰켓몬 {
 	public static void main(String[] args) {
 		int nums[] = { 3, 1, 2, 3 };
 		int answer = 0;

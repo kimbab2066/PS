@@ -1,9 +1,9 @@
-package Programmers.Hash;
+package Programmers.Hash.Level1;
 
 import java.io.*;
 import java.util.*;
 
-public class P01_2 {
+public class 완주하지_못한_선수_2 {
 	public static void main(String[] args) throws IOException {
 		String participant[] = { "mislav", "stanko", "mislav", "ana" };
 		String completion[] = { "stanko", "ana", "mislav" };

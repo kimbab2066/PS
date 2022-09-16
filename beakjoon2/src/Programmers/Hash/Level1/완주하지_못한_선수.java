@@ -1,9 +1,9 @@
-package Programmers.Hash;
+package Programmers.Hash.Level1;
 
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class P01 {
+public class 완주하지_못한_선수 {
 	public static void main(String[] args) {
 
 		String participant[] = { "mislav", "stanko", "mislav", "ana" };
