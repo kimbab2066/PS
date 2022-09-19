@@ -10,11 +10,9 @@ public class P4673 {
 
 		for (int i = 1; i <= 10000; i++) {
 			int d = self_number(i);
-			if (d < 10001) {
-				check[d] = true;
-			}
-			if (!check[i])
-				sb.append(i).append("\n");
+			if (d < 10001) check[d] = true;
+
+			if (!check[i]) sb.append(i).append("\n");
 		}
 		System.out.println(sb);
 
