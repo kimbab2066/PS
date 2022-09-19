@@ -1,7 +1,6 @@
 package Programmers.Hash.Level1;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class 완주하지_못한_선수 {
 	public static void main(String[] args) {
@@ -47,5 +46,26 @@ public class 완주하지_못한_선수 {
 			answer = participant[i + 1];
 		}
 		System.out.println(answer);
+
+		String result = solution(participant, completion);
+		System.out.println("마지막: " + result);
 	}// end of main
+
+	static String solution(String[] participant, String[] completion) {
+		LinkedList<String> link = new LinkedList<>();
+
+		for (String name : participant)
+			link.add(name);
+
+		for (int i = 0; i < completion.length; i++)
+			for (int j = 0; j < link.size(); j++)
+				if (completion[i].equals(link.get(j))) {
+					String result = link.remove(j);
+					System.out.println("지우기: " + result);
+				}
+
+		System.out.println(link);
+		String answer = link.get(0);
+		return answer;
+	}
 }// end of class
