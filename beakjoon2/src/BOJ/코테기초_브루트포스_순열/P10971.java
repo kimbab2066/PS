@@ -32,14 +32,14 @@ public class P10971 {
 	}// end of main
 
 	static void dfs(int start, int now, int cnt, int sum) {
-		if (cnt == N && start == now) {// depth가 끝자락에 도달하고
+		if (cnt == N && start == now) {// depth가 끝자락에 도달하고 처음 위치로 돌아올 때
 			min = Math.min(min, sum);
 			return;
 		}
 		// 여기서 탐색
 		for (int i = 0; i < N; i++) {
-			if (w[now][i] == 0) continue;
-			if (!visited[i] && w[now][i] > 0) {
+			if (w[now][i] == 0) continue; // [i][i] = 0이니 continue
+			if (!visited[i] && w[now][i] > 0) { // 방문X && 값이 0보다 클 때
 				visited[i] = true;
 				sum += w[now][i];
 				dfs(start, i, cnt + 1, sum);
