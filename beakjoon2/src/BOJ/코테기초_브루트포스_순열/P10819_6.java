@@ -26,9 +26,9 @@ public class P10819_6 {
 		for (int i = 0; i < N; i++) {
 			if (!visited[i]) {
 				visited[i] = true;
-				bfs(cnt + 1, arr[i], cnt == 0 ? 0 : sum + Math.abs(bf - arr[i]));
+				dfs(cnt + 1, arr[i], cnt == 0 ? 0 : sum + Math.abs(bf - arr[i]));
 				visited[i] = false;
 			}
 		}
-	}// end of bfs
+	}// end of dfs
 }// end of class
