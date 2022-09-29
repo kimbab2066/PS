@@ -1,4 +1,4 @@
-package 알고리즘스터디;
+package 스터디;
 
 import java.io.*;
 import java.util.*;
