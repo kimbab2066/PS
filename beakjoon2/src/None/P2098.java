@@ -1,4 +1,4 @@
-package BOJ.코테기초_브루트포스_순열;
+package None;
 
 import java.io.*;
 import java.util.Arrays;
