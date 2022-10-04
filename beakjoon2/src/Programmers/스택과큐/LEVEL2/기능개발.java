@@ -9,9 +9,7 @@ public class 기능개발 {
 	public static void main(String[] args) throws IOException {
 
 	}
-}// end of class
 
-class Solution {
 	public int[] solution(int[] progresses, int[] speeds) {
 		int[] answer = {};
 		Queue<Integer> que = new LinkedList<>();
@@ -31,4 +29,4 @@ class Solution {
 		answer = list.stream().mapToInt(i -> i).toArray();
 		return answer;
 	}
-}
+}// end of class
