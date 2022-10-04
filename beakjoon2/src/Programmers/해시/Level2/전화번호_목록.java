@@ -1,4 +1,4 @@
-package Programmers.Hash.Level2;
+package Programmers.해시.Level2;
 
 import java.io.*;
 import java.util.*;

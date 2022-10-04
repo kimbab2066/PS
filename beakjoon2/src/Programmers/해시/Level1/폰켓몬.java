@@ -1,4 +1,4 @@
-package Programmers.Hash.Level1;
+package Programmers.해시.Level1;
 
 import java.util.HashMap;
 import java.util.Iterator;
