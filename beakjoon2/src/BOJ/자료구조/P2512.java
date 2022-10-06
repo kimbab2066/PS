@@ -1,0 +1,48 @@
+package BOJ.자료구조;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class P2512 {
+	static int N, result;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		N = Integer.valueOf(br.readLine());
+		int[] arr = new int[N];
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < N; i++) {
+			arr[i] = Integer.valueOf(st.nextToken());
+		}
+		int M = Integer.valueOf(br.readLine());
+		Arrays.sort(arr);
+		binarySearch(arr, M);
+		System.out.println(result);
+	}// end of main
+
+	static void binarySearch(int[] arr, int M) {
+		int start = 0;
+		int end = arr[N - 1];
+		while (start <= end) {
+			int mid = (start + end) / 2;
+			int sum = 0;
+			for (int val : arr) {
+				if (val >= mid) {
+					sum += mid;
+				} else {
+					sum += val;
+				}
+
+			}
+			if (sum > M) {
+				end = mid - 1;
+			} else {
+				start = mid + 1;
+				result = Math.max(result, mid);
+			}
+		}
+	}// end of bS
+}// end of class
