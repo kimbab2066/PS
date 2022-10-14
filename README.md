@@ -56,3 +56,20 @@ LCS(m,n){
   return C[m,n];
 }
 ```
+
+## 이진 탐색(Binary Search)
+```java
+static void binarySearch(int start, int end, int target, int[] arr) {
+		while (start <= end) {
+			int mid = (start + end) / 2;
+			if (arr[mid] == target) {
+				arr[mid] = 0;
+			} else if (arr[mid] <= target) {
+				start = mid + 1;
+			} else {
+				end = mid - 1;
+			}
+			mid = (end + start) / 2;
+		}
+	}// end of bS
+```
