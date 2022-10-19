@@ -17,20 +17,23 @@ public class P4949_2 {
 	}// end of main
 
 	static String balance(String str) {
-		char[] stack = str.toCharArray();
+		char[] ch = str.toCharArray();
 		int top = 0;
 		for (int i = 0; i < str.length(); i++) {
-			if (stack[i] == '(' || stack[i] == '[') {
-				stack[top++] = stack[i];
-			} else if (stack[i] == ')') {
-				if (top == 0 || stack[top - 1] != '(') return "no\n";
+			if (ch[i] == '(' || ch[i] == '[') {
+				ch[top++] = ch[i];
+			} else if (ch[i] == ')') {
+				if (top == 0 || ch[top - 1] != '(') return "no\n";
 				top--;
-			} else if (stack[i] == ']') {
-				if (top == 0 || stack[top - 1] != '[') return "no\n";
+			} else if (ch[i] == ']') {
+				if (top == 0 || ch[top - 1] != '[') return "no\n";
 				top--;
 			}
 		}
-		if(top==0) return "yes\n";
-		else return "no\n";
+		if (top == 0) {
+			return "yes\n";
+		} else {
+			return "no\n";
+		}
 	}
 }// end of class
