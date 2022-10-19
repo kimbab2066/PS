@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class P1417 {
 	public static void main(String[] args) {
+		// N을 입력받고 후보자를 다른 후보와 비교하며 그리디로 반복
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		if (n == 1) {
@@ -19,7 +20,8 @@ public class P1417 {
 		int cnt = 0;
 		while (true) {
 			Arrays.sort(arr);
-			if (arr[n - 2] < candidate) break;
+			if (arr[n - 2] < candidate)
+				break;
 			cnt++;
 			arr[n - 2]--;
 			candidate++;
