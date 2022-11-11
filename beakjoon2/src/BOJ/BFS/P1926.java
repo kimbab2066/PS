@@ -1,4 +1,4 @@
-package BOJ.그래프와순회;
+package BOJ.BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
