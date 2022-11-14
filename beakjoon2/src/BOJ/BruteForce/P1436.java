@@ -7,19 +7,15 @@ import java.io.InputStreamReader;
 public class P1436 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		/*
-		 * N<=10,000 output = 666,1666,2666,3666... N번째 영화 제목에 들어간 숫자 구하기
-		 * 
-		 */
-		int N = Integer.parseInt(br.readLine());
-		int result = 666;
-
-		
-		result += (N - 1) * 1000;
-		
-		
-		
-		System.out.println(result);
-
+		int N = Integer.valueOf(br.readLine());
+		int num = 666;
+		int cnt = 1;
+		while (cnt != N) {
+			num++;
+			if (String.valueOf(num).contains("666")) {
+				cnt++;
+			}
+		}
+		System.out.println(num);
 	}// end of main
 }// end of class
