@@ -29,8 +29,8 @@ public class P4179_2 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		R = Integer.parseInt(st.nextToken());
-		C = Integer.parseInt(st.nextToken());
+		R = Integer.valueOf(st.nextToken());
+		C = Integer.valueOf(st.nextToken());
 		maze = new char[R][C];
 
 		fire = new LinkedList<>();
