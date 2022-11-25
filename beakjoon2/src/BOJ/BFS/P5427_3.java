@@ -13,8 +13,8 @@ public class P5427_3 {
 	static int[][] arr = new int[1001][1001];
 	static int[][] visF = new int[1001][1001];
 	static int[][] visS = new int[1001][1001];
-	static Queue<int[]> qF = new LinkedList<>();
-	static Queue<int[]> qS = new LinkedList<>();
+	static Queue<int[]> qF;
+	static Queue<int[]> qS;
 	static int W, H;
 	static StringBuilder sb = new StringBuilder();
 
@@ -26,8 +26,11 @@ public class P5427_3 {
 			W = Integer.valueOf(str[0]);
 			H = Integer.valueOf(str[1]);
 			// 초기화
+			arr = new int[H][W];
+			qF = new LinkedList<>();
+			qS = new LinkedList<>();
+
 			for (int i = 0; i < H; i++) {
-				Arrays.fill(arr[i], 0);
 				Arrays.fill(visF[i], 0);
 				Arrays.fill(visS[i], 0);
 			}
@@ -35,7 +38,8 @@ public class P5427_3 {
 				String s = br.readLine();
 				for (int j = 0; j < W; j++) {
 					char ch = s.charAt(j);
-					if (ch == '#') arr[i][j] = -1;
+					if (ch == '#')
+						arr[i][j] = -1;
 					else {
 						if (ch == '*') {
 							qF.add(new int[] { i, j });
@@ -62,9 +66,11 @@ public class P5427_3 {
 				int nx = x + dx[d];
 				int ny = y + dy[d];
 				// 범위를 벗어나는 경우
-				if (nx < 0 || ny < 0 || nx >= H || ny >= W) continue;
+				if (nx < 0 || ny < 0 || nx >= H || ny >= W)
+					continue;
 				// 벽이거나 방문한 경우
-				if (arr[nx][ny] == -1 || visF[nx][ny] >= 1) continue;
+				if (arr[nx][ny] == -1 || visF[nx][ny] >= 1)
+					continue;
 				visF[nx][ny] = visF[x][y] + 1;
 				qF.add(new int[] { nx, ny });
 			}
@@ -82,9 +88,11 @@ public class P5427_3 {
 					return String.valueOf(visS[x][y]) + "\n";
 				}
 				// 벽이거나 방문한 경우
-				if (arr[nx][ny] == -1 || visS[nx][ny] >= 1) continue;
+				if (arr[nx][ny] == -1 || visS[nx][ny] >= 1)
+					continue;
 				// 불보다 늦게 온 경우
-				if (visF[nx][ny] != 0 && visF[nx][ny] <= visS[x][y] + 1) continue;
+				if (visF[nx][ny] != 0 && visF[nx][ny] <= visS[x][y] + 1)
+					continue;
 				visS[nx][ny] = visS[x][y] + 1;
 				qS.add(new int[] { nx, ny });
 			}
